@@ -1,0 +1,22 @@
+{
+  "name": "rxjs-tutorial",
+  "version": "1.0.0",
+  "main": "and.js",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/rx": "^4.1.1",
+    "rxjs": "^6.4.0",
+    "typescript": "^3.4.3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tsc": "./node_modules/.bin/tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "akaryu0206-github.com:akaryu0206/rxjs-tutorial.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
