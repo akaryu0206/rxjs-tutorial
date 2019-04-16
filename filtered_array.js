@@ -1,13 +1,10 @@
 "use strict";
-exports.__esModule = true;
-var rx_1 = require("rx");
+Object.defineProperty(exports, "__esModule", { value: true });
+var rxjs_1 = require("rxjs");
+var operators_1 = require("rxjs/operators");
 var array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-var source = rx_1.Observable.fromArray(array);
-var filtered = source.filter(function (x) {
-    if (x % 3 === 0) {
-        return true;
-    }
-});
+var source = rxjs_1.from(array);
+var filtered = source.pipe(operators_1.filter(function (x) { return x % 3 === 0; }));
 filtered.subscribe(function (x) {
     console.log(x);
 });

@@ -1,12 +1,10 @@
 "use strict";
-exports.__esModule = true;
-var rx_1 = require("rx");
+Object.defineProperty(exports, "__esModule", { value: true });
+var rxjs_1 = require("rxjs");
+var operators_1 = require("rxjs/operators");
 var array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-var source = rx_1.Observable.fromArray(array);
-var mapped = source.map(function (x) {
-    var ret = ["-", "いち", "に", "さん", "よん", "ご", "ろく", "なな", "はち", "きゅう", "じゅう"];
-    return ret[x];
-});
+var source = rxjs_1.from(array);
+var mapped = source.pipe(operators_1.map(function (x) { return ["-", "いち", "に", "さん", "よん", "ご", "ろく", "なな", "はち", "きゅう", "じゅう"][x]; }));
 mapped.subscribe(function (x) {
     console.log(x);
 });

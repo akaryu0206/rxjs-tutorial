@@ -1,10 +1,11 @@
-import { Observable } from 'rx';
+import { Observable, timer, from, of, merge } from 'rxjs';
+import { map } from 'rxjs/operators';
 
-let five: Observable<string>  = Observable.timer(5000).map(() => '5秒');
-let seven: Observable<string> = Observable.timer(7000).map(() => '7秒');
+let five: Observable<string>  = from(timer(5000)).pipe(map(() => '5秒'));
+let seven: Observable<string> = from(timer(7000)).pipe(map(() => '7秒'));
 
-let merge: Observable<string> = five.merge(seven);
+let stream: Observable<string> = merge(five, seven);
 
-merge.subscribe(function (x) {
+stream.subscribe(function (x) {
     console.log(x);
 });
